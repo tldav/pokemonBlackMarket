@@ -1,10 +1,12 @@
-import LogoRegion from "./logo/LogoRegion";
+import RocketLogoRegion from "./rocketLogo/RocketLogoRegion";
 import "./navRegion.css";
+import PokeballIconRegion from "./pokeballIcon/PokeballIconRegion";
 
 function NavRegion() {
 	return (
 		<nav id="nav-region">
-			<LogoRegion />
+			<RocketLogoRegion />
+			<PokeballIconRegion />
 		</nav>
 	);
 }
