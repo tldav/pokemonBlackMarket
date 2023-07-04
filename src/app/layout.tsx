@@ -1,4 +1,8 @@
+"use client";
+
 import { Inter } from "next/font/google";
+import { ApolloProvider } from "@apollo/client";
+import client from "../api/client";
 import NavRegion from "@/region/nav/NavRegion";
 import "./globals.css";
 
@@ -16,8 +20,10 @@ function RootLayout({ children }: { children: React.ReactNode }) {
 				<link rel="icon" href="/favicon.ico" />
 			</head>
 			<body className={inter.className}>
-				<NavRegion />
-				{children}
+				<ApolloProvider client={client}>
+					<NavRegion />
+					{children}
+				</ApolloProvider>
 			</body>
 		</html>
 	);

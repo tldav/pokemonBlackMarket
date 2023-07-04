@@ -23,6 +23,7 @@ function PokeballIconRegion() {
 					<MUICatchingPokemonIcon fontSize="large" sx={{ color: "white" }} />
 				</MUIStyledBadge>
 			</MUIIconButton>
+			<p>$0.00</p>
 		</div>
 	);
 }
