@@ -3,17 +3,18 @@ import PokeballIconRegion from "./pokeballIcon/PokeballIconRegion";
 import "./navRegion.css";
 import usePokemonQuery from "@/api/usePokemonQuery";
 import { useEffect } from "react";
+import usePaginationQuery from "@/api/usePaginationQuery";
 
 function NavRegion() {
-	const charizard = usePokemonQuery("197");
+	// const umbreon = usePokemonQuery("196");
+	const umbreon = usePaginationQuery("20");
 
-	console.log("\n======================== charizard ========================\n");
-	console.log(charizard);
-	console.log("======================== charizard ========================\n\n");
+	console.log("\n======================== umbreon ========================\n");
+	console.log(umbreon);
+	console.log("======================== umbreon ========================\n\n");
 
 	return (
 		<nav id="nav-region">
-			{/* <p>{charizard}</p> */}
 			<RocketLogoRegion />
 			<PokeballIconRegion />
 		</nav>

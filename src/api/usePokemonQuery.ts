@@ -11,7 +11,7 @@ function usePokemonQuery(id: string): Pokemon | undefined {
 
 	if (meh.data) {
 		const poke = meh.data.pokemon_v2_pokemon[0];
-		const { id: dexNo, name, weight, height } = meh.data.pokemon_v2_pokemon[0];
+		const { id: dexNo, name, weight, height } = poke;
 		const typeOne = poke.pokemon_v2_pokemontypes[0].pokemon_v2_type.name;
 		const typeTwo = poke.pokemon_v2_pokemontypes[1]
 			? poke.pokemon_v2_pokemontypes[1].pokemon_v2_type.name
@@ -57,8 +57,17 @@ export default usePokemonQuery;
 
 /**
  * randos:
- *  25 (pikachu)
- *  133 (eevee)
+ *  25 (pikachu), 26 (raichu)
+ *  133 (eevee):
+ *    134 (vaporeon)
+ *    135 (jolteon)
+ *    136 (flareon)
+ *    196 (espeon)
+ *    197 (umbreon)
+ *    470 (leafeon)
+ *    471 (glaceon)
+ *    700 (sylveon)
+ *
  * gen 1:
  *  1 (bulbasaur) through and include 9 (blastoise)
  * gen 2:
