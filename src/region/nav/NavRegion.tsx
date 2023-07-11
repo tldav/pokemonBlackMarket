@@ -13,14 +13,14 @@ function NavRegion() {
 	console.log(umbreon);
 	console.log("======================== umbreon ========================\n\n");
 
-	const dexEntry = usePokedexQuery(umbreon?.dexNo);
+	const dexEntry = usePokedexQuery(umbreon?.getDexNo());
 
 	umbreon?.setDexEntry(dexEntry ? dexEntry : "");
 
 	return (
 		<nav id="nav-region">
-			<p>{umbreon?.dexEntry}</p>
-			<img src={umbreon?.getArtwork()} />
+			<p>{umbreon?.getDexEntry()}</p>
+			<img src={umbreon?.getShinyArtwork()} />
 			<RocketLogoRegion />
 			<PokeballIconRegion />
 		</nav>

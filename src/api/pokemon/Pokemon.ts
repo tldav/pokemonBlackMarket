@@ -7,6 +7,8 @@ class Pokemon {
 	private typeTwo: string | undefined;
 	private stats: Map<string, number>;
 	private dexEntry: string | undefined;
+	private static BASE_ARTWORK_URL: string =
+		"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 
 	constructor(
 		dexNo: number,
@@ -63,7 +65,11 @@ class Pokemon {
 	}
 
 	public getArtwork(): string {
-		return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${this.dexNo}.png`;
+		return Pokemon.BASE_ARTWORK_URL + this.dexNo + ".png";
+	}
+
+	public getShinyArtwork(): string {
+		return Pokemon.BASE_ARTWORK_URL + "/shiny/" + this.dexNo + ".png";
 	}
 }
 
