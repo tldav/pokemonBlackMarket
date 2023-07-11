@@ -21,7 +21,6 @@ const query = {
 		pokemon_v2_pokemonspeciesdescription(limit: 1) {
 			id
 			pokemon_v2_language {
-				name
 				pokemon_v2_pokemonspeciesflavortexts(
 					limit: 1
 					where: { pokemon_species_id: { _eq: ${id} } }
@@ -49,6 +48,22 @@ const query = {
 					}
 					pokemon_v2_pokemonstats {
 						base_stat
+					}
+				}
+			}
+		`;
+	},
+	forDexEntry(id: string | undefined) {
+		return gql`
+			{
+				pokemon_v2_pokemonspeciesdescription(limit: 1) {
+					pokemon_v2_language {
+						pokemon_v2_pokemonspeciesflavortexts(
+							limit: 1
+							where: { pokemon_species_id: { _eq: ${id} } }
+						) {
+							flavor_text
+						}
 					}
 				}
 			}

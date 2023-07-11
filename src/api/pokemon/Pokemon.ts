@@ -6,30 +6,32 @@ class Pokemon {
 	typeOne: string;
 	typeTwo: string | undefined;
 	stats: Map<string, number>;
-	dexEntry: string;
+	dexEntry: string | undefined;
 
 	constructor(
-		dexNo: string,
+		dexNo: number,
 		name: string,
-		height: string,
-		weight: string,
+		height: number,
+		weight: number,
 		typeOne: string,
 		typeTwo: string | undefined,
-		stats: Map<string, number>,
-		dexEntry: string
+		stats: Map<string, number>
 	) {
-		this.dexNo = dexNo;
+		this.dexNo = dexNo.toString();
 		this.name = name;
-		this.height = height;
-		this.weight = weight;
+		this.height = height.toString();
+		this.weight = weight.toString();
 		this.typeOne = typeOne;
 		this.typeTwo = typeTwo;
 		this.stats = stats;
-		this.dexEntry = dexEntry;
 	}
 
 	getArtwork(): string {
 		return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${this.dexNo}.png`;
+	}
+
+	setDexEntry(dexEntry: string | undefined): void {
+		this.dexEntry = dexEntry;
 	}
 }
 
