@@ -9,7 +9,7 @@ import query from "@/api/query/query";
 import toUSD from "@/currency/toUSD";
 
 function NavRegion() {
-	const umbreon = usePokemonQuery("150");
+	const umbreon = usePokemonQuery("24");
 	// const umbreon = usePaginationQuery("20");
 	// const umbreon = usePokedexQuery("1");
 
@@ -17,6 +17,7 @@ function NavRegion() {
 
 	console.log("\n======================== umbreon ========================\n");
 	console.log(umbreon?.getName());
+	// console.log(umbreon?.isStarter());
 	console.log("======================== umbreon ========================\n\n");
 
 	// const dexEntry = usePokedexQuery(umbreon?.getDexNo());
