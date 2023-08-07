@@ -24,16 +24,7 @@ const parsePokemonData = (pokeData: any): Pokemon => {
 		.set("Sp. Defense", spDef)
 		.set("Speed", speed);
 
-	return new Pokemon(
-		dexNo,
-		name,
-		height.toString(),
-		weight.toString(),
-		typeOne,
-		typeTwo,
-		stats,
-		""
-	);
+	return new Pokemon(dexNo, name, height.toString(), weight.toString(), typeOne, typeTwo, stats);
 };
 
 export default parsePokemonData;

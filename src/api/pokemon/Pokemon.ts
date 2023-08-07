@@ -7,6 +7,7 @@ class Pokemon {
 	private typeTwo: string | undefined;
 	private stats: Map<string, number>;
 	private dexEntry: string | undefined;
+
 	private static BASE_ARTWORK_URL: string =
 		"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 
@@ -30,6 +31,31 @@ class Pokemon {
 
 	public setDexEntry(dexEntry: string | undefined): void {
 		this.dexEntry = dexEntry;
+	}
+
+	public getArtwork(): string {
+		return Pokemon.BASE_ARTWORK_URL + this.dexNo + ".png";
+	}
+
+	public getShinyArtwork(): string {
+		return Pokemon.BASE_ARTWORK_URL + "/shiny/" + this.dexNo + ".png";
+	}
+
+	public getPrice(): number {
+		const MODIFIER = this.getStatTotal() >= 600 ? 32 : 17;
+
+		const hui: number = (this.getStatTotal() * MODIFIER) / 1.1;
+
+		return hui;
+	}
+
+	public getStatTotal(): number {
+		let statTotal = 0;
+
+		this.stats.forEach((stat: number) => {
+			statTotal += stat;
+		});
+		return statTotal;
 	}
 
 	public getDexNo(): string {
@@ -62,14 +88,6 @@ class Pokemon {
 
 	public getDexEntry(): string | undefined {
 		return this.dexEntry ? this.dexEntry : undefined;
-	}
-
-	public getArtwork(): string {
-		return Pokemon.BASE_ARTWORK_URL + this.dexNo + ".png";
-	}
-
-	public getShinyArtwork(): string {
-		return Pokemon.BASE_ARTWORK_URL + "/shiny/" + this.dexNo + ".png";
 	}
 }
 
