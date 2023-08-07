@@ -1,8 +1,6 @@
 import Pokemon from "./Pokemon";
 
 const parsePokemonData = (pokeData: any): Pokemon => {
-	// const poke = response.data.pokemon_v2_pokemon[0]; // <- send this in as arg
-
 	const { id: dexNo, name, weight, height } = pokeData;
 	const typeOne = pokeData.pokemon_v2_pokemontypes[0].pokemon_v2_type.name;
 	const typeTwo = pokeData.pokemon_v2_pokemontypes[1]

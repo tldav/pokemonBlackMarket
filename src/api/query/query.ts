@@ -1,10 +1,13 @@
 import { gql } from "@apollo/client";
+import { Parisienne } from "next/font/google";
 
 const query = {
-	byId(id: string) {
+	byId(searchParam: string) {
+		const IDENTIFIER = parseInt(searchParam) ? "id" : "name";
+
 		return gql(`
 	{
-		pokemon_v2_pokemon(limit: 1, where: { id: { _eq: ${id} } }) {
+		pokemon_v2_pokemon(limit: 1, where: { ${IDENTIFIER}: { _eq: ${searchParam} } }) {
 			id
 			name
 			height
@@ -16,17 +19,6 @@ const query = {
 			}
 			pokemon_v2_pokemonstats {
 				base_stat
-			}
-		}
-		pokemon_v2_pokemonspeciesdescription(limit: 1) {
-			id
-			pokemon_v2_language {
-				pokemon_v2_pokemonspeciesflavortexts(
-					limit: 1
-					where: { pokemon_species_id: { _eq: ${id} } }
-				) {
-					flavor_text
-				}
 			}
 		}
 	}
@@ -72,3 +64,17 @@ const query = {
 };
 
 export default query;
+
+/**
+ * 		pokemon_v2_pokemonspeciesdescription(limit: 1) {
+			id
+			pokemon_v2_language {
+				pokemon_v2_pokemonspeciesflavortexts(
+					limit: 1
+					where: { pokemon_species_id: { _eq: ${searchParam} } }
+				) {
+					flavor_text
+				}
+			}
+		}
+ */
