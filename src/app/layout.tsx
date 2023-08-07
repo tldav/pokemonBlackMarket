@@ -5,6 +5,7 @@ import { ApolloProvider } from "@apollo/client";
 import client from "../api/client";
 import NavRegion from "@/region/nav/NavRegion";
 import "./globals.css";
+import SearchRegion from "@/region/search/SearchRegion";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
 			<body className={inter.className}>
 				<ApolloProvider client={client}>
 					<NavRegion />
+					<SearchRegion />
 					{children}
 				</ApolloProvider>
 			</body>

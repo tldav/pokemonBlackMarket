@@ -16,7 +16,7 @@ html {
 }
 
 body {
-	background-image: url("./rocket-bg.png");
+	background-image: url("./image/rocket-bg.png");
 	min-height: 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -24,4 +24,16 @@ body {
 	height: 100vh;
 	background-size: cover;
 	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: inherit;
 }

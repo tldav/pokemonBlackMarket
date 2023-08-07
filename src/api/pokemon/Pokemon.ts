@@ -1,3 +1,5 @@
+import starterIds from "./starterId.json";
+
 class Pokemon {
 	private dexNo: string;
 	private name: string;
@@ -41,12 +43,13 @@ class Pokemon {
 		return Pokemon.BASE_ARTWORK_URL + "/shiny/" + this.dexNo + ".png";
 	}
 
+	private isStarter(): boolean {
+		return starterIds.includes(this.dexNo);
+	}
+
 	public getPrice(): number {
-		const MODIFIER = this.getStatTotal() >= 600 ? 32 : 17;
-
-		const hui: number = (this.getStatTotal() * MODIFIER) / 1.1;
-
-		return hui;
+		const MODIFIER = this.getStatTotal() >= 600 || this.isStarter() ? 32 : 17;
+		return (this.getStatTotal() * MODIFIER) / 1.1;
 	}
 
 	public getStatTotal(): number {

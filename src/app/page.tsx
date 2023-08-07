@@ -1,7 +1,7 @@
-import styles from "./page.module.css";
+import LandingView from "@/view/landing/LandingView";
 
 function Home() {
-	return <main className={styles.main}></main>;
+	return <LandingView />;
 }
 
 export default Home;
