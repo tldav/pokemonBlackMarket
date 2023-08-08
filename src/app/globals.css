@@ -16,7 +16,7 @@ html {
 }
 
 body {
-	background-image: url("./image/rocket-bg.png");
+	background-image: url("/image/rocket-bg.png");
 	min-height: 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -36,4 +36,46 @@ a:focus,
 a:active {
 	text-decoration: none;
 	color: inherit;
+}
+
+@media (min-width: 600px) {
+	.media-query {
+		max-width: 80%;
+	}
+}
+
+@media (min-width: 1084px) {
+	.media-query {
+		max-width: 65%;
+	}
+}
+
+@media (min-width: 1375) {
+	.media-query {
+		max-width: 59%;
+	}
+}
+
+@media (min-width: 1608px) {
+	.media-query {
+		max-width: 57%;
+	}
+}
+
+@media (min-width: 1730) {
+	.media-query {
+		max-width: 52%;
+	}
+}
+
+@media (min-width: 1800px) {
+	.media-query {
+		max-width: 47%;
+	}
+}
+
+@media (min-width: 1970px) {
+	.media-query {
+		max-width: 40%;
+	}
 }

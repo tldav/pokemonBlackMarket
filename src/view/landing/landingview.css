@@ -1,0 +1,25 @@
+#landing-view {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	margin: auto;
+	background: white;
+	border-radius: 4px;
+	width: 100%;
+	margin-top: 50px;
+}
+
+#giovanni {
+	max-width: 300px;
+	border-radius: 4px;
+}
+
+#something {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+}
+
+#rocket-logo {
+	max-height: 350px;
+}

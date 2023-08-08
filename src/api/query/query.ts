@@ -1,8 +1,7 @@
 import { gql } from "@apollo/client";
-import { Parisienne } from "next/font/google";
 
 const query = {
-	byId(searchParam: string) {
+	byIdentifier(searchParam: string) {
 		const IDENTIFIER = parseInt(searchParam) ? "id" : "name";
 
 		return gql(`

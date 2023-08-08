@@ -9,26 +9,25 @@ import query from "@/api/query/query";
 import toUSD from "@/currency/toUSD";
 
 function NavRegion() {
-	const umbreon = usePokemonQuery("nidoking");
+	const umbreon = usePokemonQuery("197");
 	// const umbreon = usePaginationQuery("20");
 	// const umbreon = usePokedexQuery("1");
 
 	// const umbreon = useQuery(query.byId("188"));
 
-	console.log("\n======================== umbreon ========================\n");
-	console.log(umbreon);
-	// console.log(umbreon?.isStarter());
-	console.log("======================== umbreon ========================\n\n");
+	// console.log("\n======================== umbreon ========================\n");
+	// console.log(umbreon);
+	// console.log("======================== umbreon ========================\n\n");
 
-	const dexEntry = usePokedexQuery(umbreon?.getDexNo());
+	// const dexEntry = usePokedexQuery(umbreon?.getDexNo());
 
 	// umbreon?.setDexEntry(dexEntry ? dexEntry : "");
 
 	return (
 		<nav id="nav-region">
-			<p>{dexEntry}</p>
+			{/* <p>{dexEntry}</p>
 			<img src={umbreon?.getShinyArtwork()} />
-			<p> {toUSD(umbreon?.getPrice())} </p>
+			<p> {toUSD(umbreon?.getPrice())} </p> */}
 			<RocketLogoRegion />
 			<PokeballIconRegion />
 		</nav>

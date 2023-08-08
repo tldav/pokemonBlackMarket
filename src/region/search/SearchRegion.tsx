@@ -6,7 +6,7 @@ function SearchRegion() {
 			<MUITextField
 				fullWidth
 				type="text"
-				placeholder="Enter Pokemon Name"
+				placeholder="Search by name or national pokedex number"
 				required
 				name="pokemon-search"
 				value=""
