@@ -3,15 +3,10 @@ import "./landingView.css";
 
 function LandingView() {
 	return (
-		<div id="landing-view" className="media-query">
+		<div id="landing-view" className="sizing-queries">
 			<img id="giovanni" src="image/giovanni_redesign.jpg" alt="Giovanni" />
 			<div id="something">
-				<img
-					// style={{ maxHeight: "350px" }}
-					id="rocket-logo"
-					src="/image/favicon.ico"
-					alt="Team Rocket Logo"
-				/>
+				<img id="rocket-logo" src="/image/favicon.ico" alt="Team Rocket Logo" />
 				<Button styleType="hollow">
 					<p style={{ width: "100% !important" }}>Shop Black Market</p>
 				</Button>

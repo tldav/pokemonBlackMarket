@@ -1,3 +1,15 @@
 #search-region {
-  
+	display: flex;
+	align-items: center;
+	margin: auto;
+}
+
+#search-bar {
+	background: white;
+	border-radius: 4px;
+}
+
+#search-button {
+	height: 50%;
+	padding: 0px;
 }

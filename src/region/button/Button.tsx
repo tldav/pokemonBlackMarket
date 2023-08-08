@@ -29,7 +29,6 @@ const hollow = {
 	},
 };
 
-// const Button = ({ children, styleType, handleClick, name, type }) => {
 const Button = (props: any) => {
 	const styleSelector = props.styleType === "solid" ? solid : hollow;
 	const variantSelector = props.styleType === "solid" ? "contained" : "outlined";
