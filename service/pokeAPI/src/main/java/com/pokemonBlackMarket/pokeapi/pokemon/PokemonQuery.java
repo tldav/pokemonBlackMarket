@@ -9,9 +9,10 @@ public class PokemonQuery {
     }
     
     public String getNameOnly() {
+        //language=GraphQL
         return """
                 query {
-                        pokemon_v2_pokemon(limit:1, where: {id: {_eq: 26}}) {
+                        pokemon_v2_pokemon(limit:1, where: {id: {_eq: 1}}) {
                             name
                         }
                     }
