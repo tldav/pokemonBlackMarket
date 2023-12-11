@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class PokemonService {
     private final HttpGraphQlClient graphQlClient;
+    private final PokemonQuery query = PokemonQuery.getInstance();
 
     public PokemonService() {
         WebClient client = WebClient.builder().baseUrl("https://beta.pokeapi.co/graphql/v1beta/").build();
@@ -18,14 +19,7 @@ public class PokemonService {
     
     public Mono<List<Pokemon>> getPokemon() {
         //language=GraphQL
-        String document = """
-                query {
-                        pokemon_v2_pokemon(limit:1, where: {id: {_eq: 25}}) {
-                            name
-                        }
-                    }
-                """;
-        
+        String document = query.getNameOnly();
         return graphQlClient.document(document).retrieve("pokemon_v2_pokemon").toEntityList(Pokemon.class);
     }
 }
