@@ -22,6 +22,8 @@ const query = gql`
 	}
 `;
 
-app.get("/", (req, res) => {
-	request(pokeUrl, query).then((data) => res.json(data));
-});
+console.log("whoierhjeiwkljweklrjewlkrjweklrjweklrjwekl");
+console.log("dkl opoop");
+// app.get("/", (req, res) => {
+// 	request(pokeUrl, query).then((data) => res.json(data));
+// });
