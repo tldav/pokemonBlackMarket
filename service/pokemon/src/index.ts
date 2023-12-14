@@ -1,29 +1,15 @@
+export {};
+
 const express = require("express");
 const app = express();
-const port = 3000;
+const PORT = 3000;
+const query = require("./query/query");
 
-app.listen(port, () => {
-	console.log(`Example app listening on port ${port}`);
+app.listen(PORT, () => {
+	console.log(`Example app listening on port ${PORT}`);
 });
 
-const { request, gql } = require("graphql-request");
+const { request } = require("graphql-request");
 const pokeUrl = "https://beta.pokeapi.co/graphql/v1beta";
 
-const query = gql`
-	{
-		pokemon_v2_pokemon(limit: 1, where: { id: { _eq: 1 } }) {
-			name
-			pokemon_v2_pokemontypes {
-				pokemon_v2_type {
-					name
-				}
-			}
-		}
-	}
-`;
-
-console.log("whoierhjeiwkljweklrjewlkrjweklrjweklrjwekl");
-console.log("dkl opoop");
-// app.get("/", (req, res) => {
-// 	request(pokeUrl, query).then((data) => res.json(data));
-// });
+request(pokeUrl, query.byIdentifier(46)).then((data: any) => console.log(data));
