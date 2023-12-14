@@ -1,3 +1,8 @@
+import { format } from "path";
+import DataFormatter from "./Pokemon/PokemonProvider";
+import Pokemon from "./Pokemon/Pokemon";
+import PokemonProvider from "./Pokemon/PokemonProvider";
+
 export {};
 
 const express = require("express");
@@ -12,4 +17,8 @@ app.listen(PORT, () => {
 const { request } = require("graphql-request");
 const pokeUrl = "https://beta.pokeapi.co/graphql/v1beta";
 
-request(pokeUrl, query.byIdentifier(46)).then((data: any) => console.log(data));
+request(pokeUrl, query.byIdentifier("149")).then((data: any) => {
+	const poke = new PokemonProvider().get(data.pokemon_v2_pokemon[0]);
+
+	console.log(poke.getShinyArtwork());
+});

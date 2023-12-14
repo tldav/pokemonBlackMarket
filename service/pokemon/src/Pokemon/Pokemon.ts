@@ -14,18 +14,18 @@ class Pokemon {
 		"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 
 	constructor(
-		dexNo: number,
+		dexNo: string,
 		name: string,
-		height: number,
-		weight: number,
+		height: string,
+		weight: string,
 		typeOne: string,
 		typeTwo: string | undefined,
 		stats: Map<string, number>
 	) {
-		this.dexNo = dexNo.toString();
+		this.dexNo = dexNo;
 		this.name = name;
-		this.height = height.toString();
-		this.weight = weight.toString();
+		this.height = height;
+		this.weight = weight;
 		this.typeOne = typeOne;
 		this.typeTwo = typeTwo;
 		this.stats = stats;
