@@ -1,5 +1,4 @@
 const { gql } = require("graphql-request");
-const pokeUrl = "https://beta.pokeapi.co/graphql/v1beta";
 
 const query = {
 	byIdentifier(searchParam: string) {

@@ -1,5 +1,12 @@
 import starterIds from "./starterId.json";
-
+/**
+ *
+ *
+ *
+ * DO NOT DELETE - WILL NEED FOR FRONT END APP
+ *
+ *
+ */
 class Pokemon {
 	private dexNo: string;
 	private name: string;
@@ -20,7 +27,7 @@ class Pokemon {
 		weight: string,
 		typeOne: string,
 		typeTwo: string | undefined,
-		stats: Map<string, number>
+		stats: any
 	) {
 		this.dexNo = dexNo;
 		this.name = name;

@@ -7,6 +7,7 @@ type Type = {
 		name: string;
 	};
 };
+
 type Info = {
 	id: number;
 	name: string;
