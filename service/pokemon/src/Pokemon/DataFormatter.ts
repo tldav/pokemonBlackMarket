@@ -2,7 +2,7 @@ import { Pokemon, Stats } from "./types/Pokemon";
 import { Info, Stat } from "./types/RawData";
 
 class DataFormatter {
-	public static get(data: Info): Pokemon {
+	public static format(data: Info): Pokemon {
 		const { id: dexNo, name, weight, height } = data;
 		const typeOne = data.pokemon_v2_pokemontypes[0].pokemon_v2_type.name;
 		const typeTwo = data.pokemon_v2_pokemontypes[1]

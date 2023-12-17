@@ -7,8 +7,8 @@ class PokemonService {
 
 	public async getByIdentifier(id: string): Promise<any> {
 		const document = query.byIdentifier(id);
-		const pokeInfo: any = await this.graphQL.req(document);
-		return DataFormatter.get(pokeInfo.pokemon_v2_pokemon[0]);
+		const pokeInfo = await this.graphQL.req(document);
+		return DataFormatter.format(pokeInfo.pokemon_v2_pokemon[0]);
 	}
 }
 
