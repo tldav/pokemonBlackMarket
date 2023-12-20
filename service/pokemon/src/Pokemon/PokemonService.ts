@@ -1,5 +1,4 @@
 const query = require("../graphQL/query/query");
-import GraphQL from "../graphQL/GraphQL";
 import DataFormatter from "./DataFormatter";
 
 class PokemonService {
