@@ -23,7 +23,7 @@ const query = {
 	}
 `;
 	},
-	byPage(offset: string) {
+	byOffset(offset: string) {
 		return gql`
 			{
 				pokemon_v2_pokemon(limit: 20, offset: ${offset}) {

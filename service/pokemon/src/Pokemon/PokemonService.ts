@@ -13,6 +13,12 @@ class PokemonService {
 		const pokeInfo = await this.graphQL.req(document);
 		return DataFormatter.format(pokeInfo.pokemon_v2_pokemon[0]);
 	}
+
+	public async getOrderedGroup(offset: string): Promise<any> {
+		const document = query.byOffset(offset);
+		const res = await this.graphQL.req(document);
+		return res;
+	}
 }
 
 export default PokemonService;

@@ -15,3 +15,7 @@ const service: PokemonService = new PokemonService(new GraphQL());
 app.get("/pokemon/:id", async (req: Request, res: Response) => {
 	res.json(await service.getByIdentifier(req.params.id));
 });
+
+app.get("/pokemon/page/offset=:offset", async (req: Request, res: Response) => {
+	res.json(await service.getOrderedGroup(req.params.offset));
+});
