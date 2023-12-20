@@ -22,6 +22,10 @@ class DataFormatter {
 		};
 	}
 
+	public static formatList(list: Array<Info>): Array<Pokemon> {
+		return list.map((poke) => this.format(poke));
+	}
+
 	private static setStats(stats: Array<Stat>): Stats {
 		const hp = stats[0].base_stat;
 		const atk = stats[1].base_stat;

@@ -17,7 +17,7 @@ class PokemonService {
 	public async getOrderedGroup(offset: string): Promise<any> {
 		const document = query.byOffset(offset);
 		const res = await this.graphQL.req(document);
-		return res;
+		return DataFormatter.formatList(res.pokemon_v2_pokemon);
 	}
 }
 
